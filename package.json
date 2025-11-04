@@ -1,0 +1,17 @@
+{
+  "name": "simple-web-app",
+  "version": "1.0.0",
+  "description": "A simple web app with Jenkins pipeline",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo 'Running tests...' && exit 0",
+    "build": "echo 'Building app...' && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "keywords": ["web", "app", "jenkins"],
+  "author": "Your Name",
+  "license": "MIT"
+}
