@@ -16,4 +16,4 @@ This is a basic Node.js web app using Express. It includes a Jenkins pipeline fo
 ## Requirements
 - Node.js
 - Jenkins
-- Gitس
+- Git
