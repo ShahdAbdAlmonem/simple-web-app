@@ -1,8 +1,9 @@
 pipeline {
   agent any
 
+  // تفعيل Node.js من إعدادات Jenkins
   tools {
-    nodejs 'NodeJS25.1.0'  // أو الاسم الذي وضعتيه في إعدادات NodeJS
+    nodejs 'NodeJS25.1.0'   // ✅ اكتبي نفس الاسم الموجود في Manage Jenkins > Tools
   }
 
   stages {
@@ -36,15 +37,20 @@ pipeline {
 
     stage('Start App') {
       steps {
-        echo '🚀 Starting the app...'
-        bat 'npm start'
+        echo '🚀 Starting the app temporarily for verification...'
+        // يشغل التطبيق لـ 5 ثوانٍ ثم يوقفه لتفادي الفشل
+        bat '''
+          start /B node app.js
+          timeout /t 5 >nul
+          taskkill /IM node.exe /F
+        '''
       }
     }
   }
 
   post {
     success {
-      echo '✅ Pipeline completed successfully! App deployed.'
+      echo '✅ Pipeline completed successfully! All stages passed.'
     }
     failure {
       echo '❌ Pipeline failed. Check the logs for details.'
