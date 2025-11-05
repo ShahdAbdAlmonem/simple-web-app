@@ -1,9 +1,8 @@
 pipeline {
   agent any
 
-  // تفعيل أداة Node.js من إعدادات Jenkins
   tools {
-    nodejs 'NodeJS25.1.0'
+    nodejs 'NodeJS25.1.0'  // أو الاسم الذي وضعتيه في إعدادات NodeJS
   }
 
   stages {
@@ -17,36 +16,28 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         echo '📦 Installing dependencies...'
-        sh 'npm install'
+        bat 'npm install'
       }
     }
 
     stage('Build') {
       steps {
         echo '🏗️ Building the app...'
-        sh 'npm run build'
+        bat 'npm run build'
       }
     }
 
     stage('Test') {
       steps {
         echo '🧪 Running tests...'
-        sh 'npm test'
+        bat 'npm test'
       }
     }
-
-    // يمكنك إضافة مرحلة lint لاحقًا عند إضافة ESLint إلى المشروع
-    // stage('Lint') {
-    //   steps {
-    //     echo '🔍 Running lint checks...'
-    //     sh 'npm run lint'
-    //   }
-    // }
 
     stage('Start App') {
       steps {
         echo '🚀 Starting the app...'
-        sh 'npm start &'
+        bat 'npm start'
       }
     }
   }
