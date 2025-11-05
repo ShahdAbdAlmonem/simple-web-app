@@ -1,10 +1,14 @@
 pipeline {
-    agent any  // يمكن تغييره إلى Docker إذا كنت تستخدم Docker: agent { docker { image 'node:14' } }
+    agent any  
     
     stages {
         stage('Checkout') {
             steps {
+
                 git branch: 'main', url: 'https://github.com/ShahdAbdAlmonem/simple-web-app.git'  // استبدل بـ URL الخاص بك
+
+                git branch: 'main', url: 'https://github.com/ShahdAbdAlmonem/simple-web-app.git'  
+
             }
         }
         
@@ -28,7 +32,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh 'npm start &'  // نشر بسيط محليًا؛ استخدم PM2 أو Docker للإنتاج
+                sh 'npm start &'  
             }
         }
     }
@@ -41,4 +45,8 @@ pipeline {
             echo 'Pipeline failed! Check logs.'
         }
     }
+
 }
+
+}
+
