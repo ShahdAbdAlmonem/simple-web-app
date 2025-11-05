@@ -4,11 +4,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-
-                git branch: 'main', url: 'https://github.com/ShahdAbdAlmonem/simple-web-app.git'  // استبدل بـ URL الخاص بك
-
-                git branch: 'main', url: 'https://github.com/ShahdAbdAlmonem/simple-web-app.git'  
-
+                // جلب الكود من GitHub مرة واحدة
+                git branch: 'main', url: 'https://github.com/ShahdAbdAlmonem/simple-web-app.git'
+            }
+        }
+        
+        stage('Lint') {
+            steps {
+                echo 'Running lint checks...'
+                // أمر تشغيل eslint لفحص جودة الكود
+                sh 'npm run lint'
             }
         }
         
@@ -32,7 +37,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh 'npm start &'  
+                sh 'npm start &'
             }
         }
     }
@@ -45,8 +50,4 @@ pipeline {
             echo 'Pipeline failed! Check logs.'
         }
     }
-
 }
-
-}
-
