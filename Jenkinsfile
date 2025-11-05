@@ -41,7 +41,7 @@ pipeline {
         // يشغل التطبيق لـ 5 ثوانٍ ثم يوقفه لتفادي الفشل
         bat '''
           start /B node app.js
-          timeout /t 5 >nul
+          timeout /t 5 
           taskkill /IM node.exe /F
         '''
       }
