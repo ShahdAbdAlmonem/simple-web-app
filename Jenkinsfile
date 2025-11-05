@@ -3,7 +3,7 @@ pipeline {
 
   // تفعيل أداة Node.js من إعدادات Jenkins
   tools {
-    nodejs 'NodeJS 25.1.0'
+    nodejs 'NodeJS25.1.0'
   }
 
   stages {
