@@ -3,7 +3,7 @@ pipeline {
 
   // تفعيل Node.js من إعدادات Jenkins
   tools {
-    nodejs 'NodeJS25.1.0'   // ✅ اكتبي نفس الاسم الموجود في Manage Jenkins > Tools
+    nodejs 'NodeJS25.1.0'   // ✅ استخدمي نفس الاسم المسجَّل في Manage Jenkins > Tools
   }
 
   stages {
@@ -38,22 +38,35 @@ pipeline {
     stage('Start App') {
       steps {
         echo '🚀 Starting the app temporarily for verification...'
-        // يشغل التطبيق لـ 5 ثوانٍ ثم يوقفه لتفادي الفشل
         bat '''
           start /B node app.js
-          timeout /t 5 
+          timeout /t 5
           taskkill /IM node.exe /F
         '''
+      }
+    }
+
+    stage('Deploy Locally') {
+      steps {
+        echo '📤 Deploying project locally...'
+        // إنشاء مجلد C:\Deploy إن لم يكن موجودًا
+        // ثم نسخ كل ملفات المشروع إليه ما عدا مجلد node_modules
+        bat '''
+          if not exist C:\\Deploy mkdir C:\\Deploy
+          xcopy /E /Y /I * C:\\Deploy\\
+          rmdir /S /Q C:\\Deploy\\node_modules
+        '''
+        echo '✅ Local deployment completed successfully!'
       }
     }
   }
 
   post {
     success {
-      echo '✅ Pipeline completed successfully! All stages passed.'
+      echo '✅ Pipeline completed successfully! App built, tested, and deployed locally.'
     }
     failure {
-      echo '❌ Pipeline failed. Check the logs for details.'
+      echo '❌ Pipeline failed. Check logs for details.'
     }
   }
 }
