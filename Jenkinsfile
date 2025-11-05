@@ -1,6 +1,10 @@
 pipeline {
   agent any
-  tools { nodejs 'NodeJS 25.1.0' }
+
+  // تفعيل أداة Node.js من إعدادات Jenkins
+  tools {
+    nodejs 'NodeJS 25.1.0'
+  }
 
   stages {
     stage('Checkout') {
@@ -31,7 +35,7 @@ pipeline {
       }
     }
 
-    // المرحلة التالية اختيارية — استخدميها لاحقًا بعد إضافة ESLint
+    // يمكنك إضافة مرحلة lint لاحقًا عند إضافة ESLint إلى المشروع
     // stage('Lint') {
     //   steps {
     //     echo '🔍 Running lint checks...'
