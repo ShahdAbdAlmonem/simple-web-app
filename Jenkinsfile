@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/simple-web-app.git'  // استبدل بـ URL الخاص بك
+                git branch: 'main', url: 'https://github.com/ShahdAbdAlmonem/simple-web-app.git'  // استبدل بـ URL الخاص بك
             }
         }
         
@@ -41,4 +41,4 @@ pipeline {
             echo 'Pipeline failed! Check logs.'
         }
     }
-}س
+}
