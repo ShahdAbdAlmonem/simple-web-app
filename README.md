@@ -36,8 +36,8 @@ simple-web-app/
 
 📸 Screenshots
 
-![simple-web-app](scr/app.png)
 ![simple-web-app](scr/run.png)
+![simple-web-app](scr/app.png)
 ![simple-web-app](scr/cop.png)
 
 🎞️ CI/CD Pipeline GIF
