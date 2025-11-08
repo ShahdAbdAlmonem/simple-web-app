@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'NodeJS25.1.0'   // استخدمي نفس الاسم الموجود في Manage Jenkins > Tools
+    nodejs 'NodeJS25.1.0'   
   }
 
   stages {
