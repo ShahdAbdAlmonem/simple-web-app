@@ -42,3 +42,10 @@ simple-web-app/
 
 🎞️ CI/CD Pipeline GIF
 ![Pipeline Demo](scr/pip-st.gif)
+
+👩🏻‍💻 Author
+Shahd Abd Almonem
+Part of the DevOps 6-Month Learning Path
+
+📜 License
+MIT License © 2025 Shahd Abd Almonem
