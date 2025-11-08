@@ -8,7 +8,7 @@ This is a basic Node.js web app using Express. It includes a Jenkins pipeline fo
 simple-web-app/
 ├── app.js
 ├── package.json
-├── package-lock.json
+├── .gitignore
 ├── Jenkinsfile
 ├── README.md
 └── scr/
