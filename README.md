@@ -1,5 +1,7 @@
 # Simple Web App with Jenkins Pipeline
 This is a basic Node.js web app using Express. It includes a Jenkins pipeline for CI/CD.
+
+
 📁 Project Structure
 simple-web-app/
 ├── app.js
@@ -12,6 +14,7 @@ simple-web-app/
     └── app.png
     └── cop.png
     └── pip-st.gif
+
 ## Setup
 1. Install dependencies: `npm install`
 2. Run the app: `npm start`
@@ -27,10 +30,12 @@ simple-web-app/
 - Node.js
 - Jenkins
 - Git
+
 📸 Screenshots
-/scr/
-    - run.png
-    - app.png
-    - cop.png
+
+![simple-web-app](scr/app.png)
+![simple-web-app](scr/run.png)
+![simple-web-app](scr/cop.png)
+
 🎞️ CI/CD Pipeline GIF
 ![Pipeline Demo](scr/pip-st.gif)
