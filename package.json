@@ -1,17 +1,25 @@
 {
   "name": "simple-web-app",
   "version": "1.0.0",
-  "description": "A simple web app with Jenkins pipeline",
+  "description": "A simple Node.js web application automated using a Jenkins CI/CD pipeline.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo 'Running tests...' && exit 0",
-    "build": "echo 'Building app...' && exit 0"
+    "test": "echo \"Running automated tests...\" && exit 0",
+    "build": "echo \"Building the application (no actual build required)...\" && exit 0",
+    "lint": "echo \"Linting code...\" && exit 0"
   },
   "dependencies": {
     "express": "^4.18.0"
   },
-  "keywords": ["web", "app", "jenkins"],
-  "author": "Your Name",
-  "license": "MIT"
+  "keywords": ["nodejs", "web-app", "express", "jenkins", "pipeline", "cicd"],
+  "author": "Shahd Abd Almonem",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShahdAbdAlmonem/simple-web-app.git"
+  },
+  "engines": {
+    "node": ">=14"
+  }
 }
