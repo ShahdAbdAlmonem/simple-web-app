@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
       background-attachment: fixed;
       overflow:hidden;
     }
-    /* Watermark CI/CD */
+    /* CI/CD watermark */
     body::before{
       content:"CI/CD";
       position:fixed;
@@ -79,8 +79,8 @@ app.get('/', (req, res) => {
 </head>
 <body>
   <div class="container">
-    <h1>CI/CD Pipeline Demo</h1>
-    <p>Hello, World! This web app was deployed automatically using Jenkins CI/CD Pipeline.</p>
+    <h1>Hello, World!</h1>
+    <p>This is a simple web app deployed via Jenkins CI/CD Pipeline.</p>
     <div class="tag">Jenkins • Node.js • Express</div>
   </div>
 </body>
